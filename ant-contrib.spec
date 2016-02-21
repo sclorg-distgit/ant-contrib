@@ -7,7 +7,7 @@
 Summary:        Collection of tasks for Ant
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.0
-Release:        0.23.%{beta_number}.15%{?dist}
+Release:        0.23.%{beta_number}.16%{?dist}
 License:        ASL 2.0 and ASL 1.1
 URL:            http://ant-contrib.sourceforge.net/
 Source0:        https://downloads.sourceforge.net/project/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3-src.tar.bz2
@@ -96,6 +96,9 @@ install -pm 644 %{pkg_name}-1.0b3.pom $RPM_BUILD_ROOT/%{_mavenpomdir}/JPP.ant-%{
 %doc %{_javadocdir}/%{name}
 
 %changelog
+* Fri Jan 29 2016 Michal Srb <msrb@redhat.com> - 1.0-0.23.b3.16
+- Fix ivy config
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.0-0.23.b3.15
 - maven33 rebuild #2
 

@@ -41,9 +41,9 @@ index 1929e5f..7b91187 100644
 +          <ivy pattern="${ivy.conf.dir}/lib/[module]/apache-ivy-[revision].xml" />
 +          <artifact pattern="/opt/rh/rh-java-common/root/usr/share/java/[artifact].[ext]" />
 +      </filesystem>
-+      <filesystem name="maven30">
++      <filesystem name="rh-maven33">
 +          <ivy pattern="${ivy.conf.dir}/lib/[module]/apache-ivy-[revision].xml" />
-+          <artifact pattern="/opt/rh/maven30/root/usr/share/java/[artifact].[ext]" />
++          <artifact pattern="/opt/rh/rh-maven33/root/usr/share/java/[artifact].[ext]" />
        </filesystem>
            
 -      <ivyrep name="ivyrep" />
@@ -52,7 +52,7 @@ index 1929e5f..7b91187 100644
        <chain name="default-resolver">
 -          <resolver ref="local" />
 +          <resolver ref="rh-java-common" />
-+          <resolver ref="maven30" />
++          <resolver ref="rh-maven33" />
            <resolver ref="ivyrep" />
        </chain>
    </resolvers>
