@@ -7,7 +7,7 @@
 Summary:        Collection of tasks for Ant
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.0
-Release:        0.23.%{beta_number}.14%{?dist}
+Release:        0.23.%{beta_number}.15%{?dist}
 License:        ASL 2.0 and ASL 1.1
 URL:            http://ant-contrib.sourceforge.net/
 Source0:        https://downloads.sourceforge.net/project/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3-src.tar.bz2
@@ -23,7 +23,7 @@ BuildRequires:  %{?scl_prefix_java_common}junit >= 3.8.0
 BuildRequires:  %{?scl_prefix_java_common}ant-junit >= 1.6.2
 BuildRequires:  %{?scl_prefix_java_common}xerces-j2
 BuildRequires:  %{?scl_prefix_java_common}bcel >= 5.0
-BuildRequires:  maven30-apache-ivy
+BuildRequires:  %{?scl_prefix}apache-ivy
 Requires:       %{?scl_prefix_java_common}junit >= 3.8.0
 Requires:       %{?scl_prefix_java_common}ant >= 1.6.2
 Requires:       %{?scl_prefix_java_common}xerces-j2
@@ -42,7 +42,7 @@ Api documentation for %{pkg_name}.
 
 %prep
 %setup -q -n %{pkg_name}
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %patch0 -b .sav
 %patch2
@@ -61,13 +61,13 @@ rm -fr src/java/net/sf/antcontrib/net/URLImportTask.java
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 ant dist
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 # jars
 install -Dpm 644 target/%{pkg_name}.jar $RPM_BUILD_ROOT%{_javadir}/ant/%{pkg_name}.jar
@@ -96,6 +96,9 @@ install -pm 644 %{pkg_name}-1.0b3.pom $RPM_BUILD_ROOT/%{_mavenpomdir}/JPP.ant-%{
 %doc %{_javadocdir}/%{name}
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.0-0.23.b3.15
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 1.0-0.23.b3.14
 - maven33 rebuild
 
