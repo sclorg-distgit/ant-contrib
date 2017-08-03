@@ -6,7 +6,7 @@
 Summary:        Collection of tasks for Ant
 Name:           %{?scl_prefix}ant-contrib
 Version:        1.0
-Release:        0.30.%{beta_number}.1%{?dist}
+Release:        0.30.%{beta_number}.2%{?dist}
 License:        ASL 2.0 and ASL 1.1
 URL:            http://ant-contrib.sourceforge.net/
 Source0:        https://downloads.sourceforge.net/project/ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3-src.tar.bz2
@@ -81,6 +81,9 @@ echo "ant-contrib/ant-contrib" > $RPM_BUILD_ROOT%{_sysconfdir}/ant.d/ant-contrib
 %doc target/docs/LICENSE.txt LICENSE-2.0.txt
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 1.0-0.30.b3.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 1.0-0.30.b3.1%{?dist}
 - Automated package import and SCL-ization
 
